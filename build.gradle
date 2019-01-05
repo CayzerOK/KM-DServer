@@ -2,15 +2,19 @@ group 'KotlineMiamiDS'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.3.10'
+    ext.kotlin_version = '1.3.11'
     ext.ktor_version = '1.0.0'
+    ext.lwjglVersion = "3.2.0"
+    ext.lwjglNatives = "natives-windows"
+    ext.jomlVersion = "+"
 
     repositories {
         jcenter()
         mavenCentral()
-        maven { url "https://dl.bintray.com/kotlin/kotlin" }
+        maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
     }
     dependencies {
+
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -19,12 +23,14 @@ apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 
-kotlin { experimental { coroutines "enable" } }
+compileKotlin { kotlinOptions.jvmTarget = "1.8" }
+compileTestKotlin { kotlinOptions.jvmTarget = "1.8" }
 
 repositories {
     mavenCentral()
     jcenter()
     maven { url "https://dl.bintray.com/kotlin/ktor" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
 sourceSets {
@@ -34,13 +40,16 @@ sourceSets {
 
 dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
-    compile "org.jetbrains.kotlin:kotlin-stdlib"
     compile "ch.qos.logback:logback-classic:1.2.3"
-    compile "io.ktor:ktor-server-netty:$ktor_version"
     compile "io.ktor:ktor-network:$ktor_version"
-    testCompile 'junit:junit:4.12'
-    compile group: 'com.xenomachina', name: 'kotlin-argparser', version: '2.0.7'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.joml:joml:${jomlVersion}"
 }
 
-compileKotlin { kotlinOptions.jvmTarget = "1.8" }
-compileTestKotlin { kotlinOptions.jvmTarget = "1.8" }
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.cayzerok.core.MainKt'
+        )
+    }
+}

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.joml:joml:1.9.13-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joml/joml/1.9.13-SNAPSHOT/6ef977eb2c96ead26f00f82c040342ca4e3542bf/joml-1.9.13-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joml/joml/1.9.13-SNAPSHOT/4482f6dc80a6904a08edcbe9dbdc28d6475c4052/joml-1.9.13-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joml/joml/1.9.13-SNAPSHOT/13b5bbf09f48edf625a64f64270b03dd76166d4f/joml-1.9.13-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joml/joml/1.9.13-SNAPSHOT/324ed0ad9dd26f2e65a536bc5cff3125dd49374b/joml-1.9.13-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
